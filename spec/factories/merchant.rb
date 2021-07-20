@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :merchant do
-    name { Faker::Kpop.girl_groups }
+    name { Faker::Book.title }
   end
 end

@@ -48,6 +48,7 @@ group :development, :test do
   gem 'pry'
   gem 'travis'
   gem 'faker'
+  gem 'fast_jsonapi'
 end
 
 group :development do
