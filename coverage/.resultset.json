@@ -14,7 +14,6 @@
           1,
           null,
           1,
-          null,
           null
         ]
       },
@@ -25,17 +24,27 @@
           null
         ]
       },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/api/v1/items_controller.rb": {
         "lines": [
           1,
           null,
           1,
-          7,
-          7,
+          4,
           null,
-          null,
-          1,
-          0,
           null,
           null
         ]
@@ -47,20 +56,32 @@
           1,
           null,
           1,
-          7,
-          7,
-          7,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
           1,
           null,
-          7,
+          1,
+          0,
+          null,
+          null,
+          1,
           1,
           null,
-          7,
           null,
           null
         ]
       },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/merchant_serializer.rb": {
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/item_serializer.rb": {
         "lines": [
           1,
           1,
@@ -88,22 +109,6 @@
           0,
           0,
           null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/models/item.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
           0,
           0,
           0,
@@ -153,6 +158,37 @@
         "branches": {
         }
       },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/error_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/ldwha/Turing/3_mod/rails-engine/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -161,12 +197,17 @@
         "branches": {
         }
       },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/api/v1/merchant_items_controller.rb": {
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           0,
           null,
           0,
+          0,
+          0,
+          0,
           null,
+          0,
+          0,
           0,
           0
         ],
@@ -194,6 +235,6 @@
         }
       }
     },
-    "timestamp": 1626815049
+    "timestamp": 1626900057
   }
 }
