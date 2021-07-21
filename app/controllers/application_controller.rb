@@ -18,11 +18,13 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   def render_unprocessable_entity_response(exception)
-    render json: exception.record.errors, status: :unprocessable_entity
+    render json: { 
+      error: [exception.record.errors],
+      message: "Your request could not be completed"
+      }, status: :unprocessable_entity
   end
 
   def render_not_found_response(exception)
-    render json: { error: '404 Not Found' }, status: :not_found
-    # render json: { error: [exception.message, 404] }, status: :not_found 
+    render json: { error: [exception.message, '404 Not Found'] }, status: :not_found
   end
 end
