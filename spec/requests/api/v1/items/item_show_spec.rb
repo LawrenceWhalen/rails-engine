@@ -8,8 +8,17 @@ RSpec.describe 'item api' do
 
       get api_v1_item_path(item.id)
       actual = JSON.parse(response.body, symbolize_names: true)
-      binding.pry
-      expect(actual)
+
+      expect(actual[:data].length).to eq(3)
+      expect(actual[:data][:attributes][:name]).to eq(Item.first.name)
+    end
+    it 'returns an error if the item does not exist' do
+      merchant = create(:merchant)
+      item = create(:item, merchant: merchant)
+
+      get api_v1_item_path(898)
+
+      expect(response).to have_http_status(404)
     end
   end
 end

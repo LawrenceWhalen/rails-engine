@@ -24,26 +24,22 @@
           null
         ]
       },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/models/item.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/api/v1/items_controller.rb": {
         "lines": [
           1,
           null,
           1,
-          4,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
           null,
           null,
           null
@@ -83,6 +79,20 @@
       },
       "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/item_serializer.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
           1,
           1,
           1,
@@ -235,6 +245,6 @@
         }
       }
     },
-    "timestamp": 1626900057
+    "timestamp": 1626904857
   }
 }

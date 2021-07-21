@@ -8,6 +8,7 @@ RSpec.describe 'merchants item api' do
 
       get api_v1_merchant_items_path(merchant_id: merchant.id)
       actual = JSON.parse(response.body, symbolize_names: true)
+      
       expect(actual[:data].length).to eq(5)
       expect(actual[:data].first[:attributes][:name]).to eq(Item.first.name)
 
