@@ -295,6 +295,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.2)
   database_cleaner
+  database_cleaner-active_record
   dotenv-rails
   factory_bot_rails
   faker
