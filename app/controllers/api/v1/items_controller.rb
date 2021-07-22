@@ -2,7 +2,11 @@ class Api::V1::ItemsController < ApplicationController
   protect_from_forgery with: :null_session
 
   def index
-    render json: ItemSerializer.new(Merchant.find(params[:merchant_id]).items) if params[:merchant_id]
+    if params[:merchant_id]
+      render json: ItemSerializer.new(Merchant.find(params[:merchant_id]).items)
+    else
+      'hello'
+    end
   end
 
   def show
