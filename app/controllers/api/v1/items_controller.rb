@@ -5,7 +5,8 @@ class Api::V1::ItemsController < ApplicationController
     if params[:merchant_id]
       render json: ItemSerializer.new(Merchant.find(params[:merchant_id]).items)
     else
-      'hello'
+      offset_limit = page_offest(params)
+      render json: ItemSerializer.new(Item.all.offset(offset_limit[:offset]).limit(offset_limit[:limit]))
     end
   end
 
@@ -20,6 +21,13 @@ class Api::V1::ItemsController < ApplicationController
 
   def destroy
     Item.destroy(params[:id])
+  end
+
+  def update
+    Merchant.find(params[:merchant_id]) if params[:merchant_id]
+    item = Item.find(params[:id])
+    item.update!(item_params)
+    render json: ItemSerializer.new(item), status: :accepted
   end
 
   private

@@ -5,8 +5,8 @@ RSpec.describe 'item index api' do
     before :each do
       DatabaseCleaner.clean
 
-      create(:merchant)
-      create(:item, merchant: merchant, 50)
+      merchant = create(:merchant)
+      create_list(:item, 40, merchant: merchant)
     end
     it 'retuns 20 merchants' do
       
