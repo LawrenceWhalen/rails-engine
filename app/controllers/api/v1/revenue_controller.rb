@@ -41,8 +41,7 @@ class Api::V1::RevenueController < ApplicationController
   end
 
   def items_sold
-    if !params[:quantity] || params[:quantity].to_i >= 1
-      params[:quantity] = 5 if !params[:quantity]
+    if params[:quantity].to_i >= 1
       render json: ItemsSoldSerializer.new(Merchant.top_items.limit(params[:quantity]))
     else
       render json: { 
