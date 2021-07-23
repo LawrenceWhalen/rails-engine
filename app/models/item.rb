@@ -24,4 +24,12 @@ class Item < ApplicationRecord
         {max_price: min_max[:max_price]}).order(:name)
     end
   end
+
+  def self.top_items
+    joins(invoices: :transactions)
+    .select('items.*, sum(invoice_items.quantity * invoice_items.unit_price) as revenue')
+    .where('transactions.result = ? AND invoices.status = ?', 'success', 'shipped')
+    .group('items.id')
+    .order('revenue DESC')
+  end
 end
