@@ -7,4 +7,21 @@ class Item < ApplicationRecord
   validates :description, presence: true
   validates :unit_price, presence: true, numericality: true
   validates :merchant, presence: true
+
+  def self.find_name(name)
+    Item.where("name ILIKE ?" ,"%#{name}%").order(:name)
+  end
+
+  def self.find_price(min_max)
+    if min_max[:min_price] && min_max[:max_price]
+      Item.where("unit_price >= :min_price AND unit_price <= :max_price",
+        {min_price: min_max[:min_price], max_price: min_max[:max_price]}).order(:name)
+    elsif min_max[:min_price]
+      Item.where("unit_price >= :min_price",
+        {min_price: min_max[:min_price]}).order(:name)
+    else
+      Item.where("unit_price <= :max_price",
+        {max_price: min_max[:max_price]}).order(:name)
+    end
+  end
 end
