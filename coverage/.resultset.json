@@ -16,11 +16,20 @@
           1,
           null,
           1,
-          1,
+          0,
           null,
           null,
           1,
-          2,
+          3,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
           null,
           null,
           null,
@@ -64,6 +73,24 @@
           null,
           null,
           null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/models/customer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
           null
         ]
       },
@@ -78,16 +105,6 @@
           1,
           null,
           1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/models/customer.rb": {
-        "lines": [
-          1,
-          1,
-          null,
           1,
           1,
           null
@@ -118,7 +135,126 @@
           null
         ]
       },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/api/v1/revenue_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          3,
+          null,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/merchant_revenue_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/ poros/merchant_rev.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/merchant_name_revenue_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/item_revenue_serializer.rb": {
         "lines": [
           0,
           0,
@@ -150,45 +286,6 @@
       },
       "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/item_serializer.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
           0,
           0,
           0,
@@ -373,40 +470,8 @@
         ],
         "branches": {
         }
-      },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/api/v1/revenue_controller.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1627018121
+    "timestamp": 1627027649
   }
 }

@@ -56,6 +56,7 @@ RSpec.describe Merchant do
         transaction_5 = Transaction.create(invoice: invoice_5, result: 'success', credit_card_number: 123, credit_card_expiration_date: '123') 
 
         actual = Merchant.top_merchants
+        binding.pry
 
         expect(actual[0]).to eq(merchant_3)
         expect(actual[1]).to eq(merchant_2)
@@ -97,7 +98,7 @@ RSpec.describe Merchant do
         transaction_4 = Transaction.create(invoice: invoice_4, result: 'failed', credit_card_number: 123, credit_card_expiration_date: '123')
         transaction_5 = Transaction.create(invoice: invoice_5, result: 'success', credit_card_number: 123, credit_card_expiration_date: '123') 
 
-        actual = Merchant.top_merchants
+        actual = Merchant.unshipped_revenue
 
         expect(actual[0]).to eq(merchant_5)
         expect(actual[1]).to eq(merchant_3)

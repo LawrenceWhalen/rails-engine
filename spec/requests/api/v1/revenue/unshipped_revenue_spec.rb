@@ -32,7 +32,7 @@ RSpec.describe 'unshipped revenue' do
     @transaction_6 = Transaction.create(invoice: @invoice_1, result: 'failed', credit_card_number: 123, credit_card_expiration_date: '123')
     @transaction_2 = Transaction.create(invoice: @invoice_2, result: 'success', credit_card_number: 123, credit_card_expiration_date: '123')
     @transaction_3 = Transaction.create(invoice: @invoice_3, result: 'success', credit_card_number: 123, credit_card_expiration_date: '123')
-    @transaction_4 = Transaction.create(invoice: @invoice_4, result: 'failed', credit_card_number: 123, credit_card_expiration_date: '123')
+    @transaction_4 = Transaction.create(invoice: @invoice_4, result: 'success', credit_card_number: 123, credit_card_expiration_date: '123')
     @transaction_5 = Transaction.create(invoice: @invoice_5, result: 'success', credit_card_number: 123, credit_card_expiration_date: '123') 
     # Invoices must have a successful transaction and be shipped to the customer to be considered as revenue.
   end
@@ -43,9 +43,20 @@ RSpec.describe 'unshipped revenue' do
       actual = JSON.parse(response.body, symbolize_names: true)
 
       expect(actual[:data].length).to eq(3)
-      expect(actual[:data][0][:attributes][:name]).to eq(@merchant_4.name)
-      expect(actual[:data][1][:attributes][:name]).to eq(@merchant_3.name)
-      expect(actual[:data][2][:attributes][:name]).to eq(@merchant_2.name)
+      expect(actual[:data][0][:attributes][:potential_revenue]).to eq(200.0)
+      expect(actual[:data][1][:attributes][:potential_revenue]).to eq(40.0)
+      expect(actual[:data][2][:attributes][:potential_revenue]).to eq(30.0)
+    end
+    it 'defaults to a quantity if non is provided' do
+      get '/api/v1/revenue/unshipped'
+
+      actual = JSON.parse(response.body, symbolize_names: true)
+
+      expect(actual[:data].length).to eq(4)
+      expect(actual[:data][0][:attributes][:potential_revenue]).to eq(200.0)
+      expect(actual[:data][1][:attributes][:potential_revenue]).to eq(40.0)
+      expect(actual[:data][2][:attributes][:potential_revenue]).to eq(30.0)
+      expect(actual[:data][3][:attributes][:potential_revenue]).to eq(20.0)
     end
   end
   describe 'negative numbers as quantity' do
