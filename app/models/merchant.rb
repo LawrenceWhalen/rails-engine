@@ -16,6 +16,14 @@ class Merchant < ApplicationRecord
     .order('revenue DESC')
   end
 
+  def self.top_items
+    joins(items: [invoices: :transactions])
+    .select('merchants.*, sum(invoice_items.quantity ) as count')
+    .where('transactions.result = ? AND invoices.status = ?', 'success', 'shipped')
+    .group('merchants.id')
+    .order('count DESC')
+  end
+
   def self.unshipped_revenue
     joins(items: [invoices: :transactions])
     .select('merchants.id, sum(invoice_items.quantity * invoice_items.unit_price) as potential_revenue')
