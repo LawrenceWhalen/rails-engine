@@ -90,8 +90,8 @@ RSpec.describe 'merchants with most items sold' do
 
       actual = JSON.parse(response.body, symbolize_names: true)
 
-      expect(actual[:error].length).to eq(2)
-      expect(actual[:error][1]).to eq('Quantity must be a postive number')
+      expect(actual[:error].length).to eq(1)
+      expect(actual[:error][0]).to eq('Quantity must be one or greater')
     end
   end
 end

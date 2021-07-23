@@ -40,4 +40,16 @@ class Api::V1::RevenueController < ApplicationController
     render json: MerchantRevenueSerializer.new(MerchantRev.new(id: merchant.id, revenue: merchant.total_revenue))
   end
 
+  def items_sold
+    if !params[:quantity] || params[:quantity].to_i >= 1
+      params[:quantity] = 5 if !params[:quantity]
+      render json: ItemsSoldSerializer.new(Merchant.top_items.limit(params[:quantity]))
+    else
+      render json: { 
+        error: ['Quantity must be one or greater'],
+        message: "Your request could not be completed"
+        }, status: :bad_request
+    end
+  end
+
 end

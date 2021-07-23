@@ -12,8 +12,9 @@ Rails.application.routes.draw do
       get '/items/find', to: 'items#find'
       get '/items/find_all', to: 'items#find_all'
       resources :items
-      get '/revenue/merchants', to: 'revenue#merchants'
+      get '/revenue/merchants/most_items', to: 'revenue#items_sold'
       get '/revenue/merchants/:id', to: 'revenue#merchant_show'
+      get '/revenue/merchants', to: 'revenue#merchants'
       get '/revenue/unshipped', to: 'revenue#unshipped'
       get '/revenue/items', to: 'revenue#items'
       resources :revenue, only: [:index]
