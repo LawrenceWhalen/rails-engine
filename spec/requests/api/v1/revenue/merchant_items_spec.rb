@@ -36,9 +36,9 @@ RSpec.describe 'merchants with most items sold' do
     @transaction_5 = Transaction.create(invoice: @invoice_5, result: 'success', credit_card_number: 123, credit_card_expiration_date: '123') 
     # Invoices must have a successful transaction and be shipped to the customer to be considered as revenue.
   end
-  describe 'get: /revenue/merchants/most_items' do
+  describe 'get: /merchants/most_items' do
     it 'returns a specified number of merchants ordered by total items sold' do
-      get '/api/v1/revenue/merchants/most_items?quantity=3'
+      get '/api/v1/merchants/most_items?quantity=3'
 
       actual = JSON.parse(response.body, symbolize_names: true)
 
@@ -47,7 +47,7 @@ RSpec.describe 'merchants with most items sold' do
       expect(actual[:data][2][:attributes][:name]).to eq(@merchant_1.name)
     end
     it 'can return fewer than the number of eligable merchants' do
-      get '/api/v1/revenue/merchants/most_items?quantity=1'
+      get '/api/v1/merchants/most_items?quantity=1'
 
       actual = JSON.parse(response.body, symbolize_names: true)
 
@@ -55,7 +55,7 @@ RSpec.describe 'merchants with most items sold' do
       expect(actual[:data][0][:attributes][:name]).to eq(@merchant_3.name)
     end
     it 'does not return merchants without real revenue' do
-      get '/api/v1/revenue/merchants/most_items?quantity=20'
+      get '/api/v1/merchants/most_items?quantity=20'
 
       actual = JSON.parse(response.body, symbolize_names: true)
 
@@ -68,14 +68,14 @@ RSpec.describe 'merchants with most items sold' do
       @transaction_2.destroy
       @transaction_3.destroy
 
-      get '/api/v1/revenue/merchants/most_items?quantity=3'
+      get '/api/v1/merchants/most_items?quantity=3'
 
       actual = JSON.parse(response.body, symbolize_names: true)
 
       expect(actual[:data].length).to eq(0)
     end
     it 'defaults to a number if one not given' do
-      get '/api/v1/revenue/merchants/most_items'
+      get '/api/v1/merchants/most_items'
 
       actual = JSON.parse(response.body, symbolize_names: true)
 
@@ -86,7 +86,7 @@ RSpec.describe 'merchants with most items sold' do
   end
   describe 'bad api calls' do
     it 'returns an error if the quantity is not a positive number' do
-      get '/api/v1/revenue/merchants/most_items?quantity=0'
+      get '/api/v1/merchants/most_items?quantity=0'
 
       actual = JSON.parse(response.body, symbolize_names: true)
 
