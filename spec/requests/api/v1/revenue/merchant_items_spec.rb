@@ -74,19 +74,18 @@ RSpec.describe 'merchants with most items sold' do
 
       expect(actual[:data].length).to eq(0)
     end
-    it 'defaults to a number if one not given' do
-      get '/api/v1/merchants/most_items'
-
-      actual = JSON.parse(response.body, symbolize_names: true)
-
-      expect(actual[:data].length).to eq(3)
-      expect(actual[:data][0][:attributes][:name]).to eq(@merchant_3.name)
-      expect(actual[:data][2][:attributes][:name]).to eq(@merchant_1.name)
-    end
   end
   describe 'bad api calls' do
     it 'returns an error if the quantity is not a positive number' do
       get '/api/v1/merchants/most_items?quantity=0'
+
+      actual = JSON.parse(response.body, symbolize_names: true)
+
+      expect(actual[:error].length).to eq(1)
+      expect(actual[:error][0]).to eq('Quantity must be one or greater')
+    end
+    it 'error out if no quantity given' do
+      get '/api/v1/merchants/most_items'
 
       actual = JSON.parse(response.body, symbolize_names: true)
 
