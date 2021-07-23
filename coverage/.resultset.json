@@ -16,11 +16,11 @@
           1,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
-          4,
+          2,
           null,
           null,
           null,
@@ -67,16 +67,6 @@
           null
         ]
       },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/models/customer.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/ldwha/Turing/3_mod/rails-engine/app/models/invoice.rb": {
         "lines": [
           1,
@@ -88,6 +78,16 @@
           1,
           null,
           1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/models/customer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
           1,
           1,
           null
@@ -118,68 +118,25 @@
           null
         ]
       },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/api/v1/revenue_controller.rb": {
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/merchant_name_revenue_serializer.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          6,
-          4,
-          null,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/application_controller.rb": {
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/unshipped_order_serializer.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
           0,
           0,
           0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/merchant_revenue_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
+          0
+        ],
+        "branches": {
+        }
       },
       "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/merchant_serializer.rb": {
         "lines": [
@@ -193,6 +150,45 @@
       },
       "/Users/ldwha/Turing/3_mod/rails-engine/app/serializers/item_serializer.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -377,8 +373,40 @@
         ],
         "branches": {
         }
+      },
+      "/Users/ldwha/Turing/3_mod/rails-engine/app/controllers/api/v1/revenue_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1627015881
+    "timestamp": 1627018121
   }
 }
