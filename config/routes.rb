@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get '/items/find', to: 'items#find'
       get '/items/find_all', to: 'items#find_all'
       resources :items
+      get '/revenue/merchants', to: 'revenue#index'
+      resources :revenue, only: [:index]
     end
   end
 end
