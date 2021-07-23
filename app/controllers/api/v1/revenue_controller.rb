@@ -37,12 +37,7 @@ class Api::V1::RevenueController < ApplicationController
 
   def merchant_show
     merchant = Merchant.find(params[:id])
-
-    if Merchant.top_merchants.where(id: merchant.id).present?
-      render json: MerchantRevenueSerializer.new(Merchant.top_merchants.find(merchant.id))
-    else
-      render json: MerchantRevenueSerializer.new(MerchantRev.new(id: merchant.id, revenue: 0))
-    end
+    render json: MerchantRevenueSerializer.new(MerchantRev.new(id: merchant.id, revenue: merchant.total_revenue))
   end
 
 end
